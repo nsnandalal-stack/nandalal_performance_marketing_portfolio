@@ -1,26 +1,23 @@
-# Nandalal — Interactive 3D Performance Marketing Portfolio
+# Nandalal — Digital Marketing Portfolio
 
-A static portfolio experience built with Three.js. Visitors can walk through workplace-inspired career chapters, view your portrait as the lead guide, and choose a companion avatar that follows behind.
+A static, interactive Three.js portfolio with a portrait-led main character, a selectable companion avatar, a modern workplace atrium, company-name wall signage, career timeline, projects, skills, credential artwork and contact actions.
 
 ## Publish with GitHub Pages
+In **Settings → Pages**, choose **Deploy from a branch**, select `main` and `/(root)`, then save.
 
-1. Open **Settings → Pages** in this repository.
-2. Under **Build and deployment**, select **Deploy from a branch**.
-3. Choose branch **main** and folder **/(root)**, then click **Save**.
-4. After GitHub Pages finishes its first deployment, open the URL shown in the Pages settings. It is expected to be:
-   `https://nsnandalal-stack.github.io/nandalal_performance_marketing_portfolio/`
-
-## Local preview
-
-Run `python3 -m http.server 8000` from the repository root, then open `http://localhost:8000`.
+Expected address:
+https://nsnandalal-stack.github.io/nandalal_performance_marketing_portfolio/
 
 ## Controls
+- Choose a male or female companion in the top-right controls.
+- Use W/A/S/D or arrow keys to move. The on-screen directional pad works on touch screens.
+- Drag on the 3D environment to look around.
+- Select a glowing marker or a career milestone to open its details.
+- Use the left navigation for experience, projects, skills, credentials and contact.
+- Narration uses the browser's speech synthesis.
 
-- Choose a male or female companion at the opening screen.
-- Use **WASD** or the arrow keys to move; drag to look around.
-- Select a glowing marker or career milestone to open a chapter.
-- Use **Narrate** for browser speech narration.
+## Company references and logos
+The company destinations are matched to these official domains: Stark — stark.in; Toonz — toonz.co; FAARMS — faarms.in; Acharya — acharya.ac.in; Xentrix — xentrixstudios.com. Small brand icons are website favicons loaded from those domains through Google's favicon service. The 3D lobby wall uses company-name wordmarks rather than recreated official vector artwork.
 
 ## Implementation notes
-
-The HTML experience is gzip-compressed in `assets/site-payload.bin` and expanded by the root `index.html` loader using the browser's `DecompressionStream` API. Three.js is loaded from a CDN, so an internet connection is required. The lead character uses the supplied portrait image on a 3D body/plane; it is not a fully rigged photorealistic 3D human. Company marks are loaded as website favicons rather than verified vector logo assets.
+The main guide uses the supplied portrait, attached to a simple 3D lower body; it is not a fully rigged photorealistic 3D model. The companion is a procedural stylised avatar. Three.js is loaded from jsDelivr, and favicon icons are fetched from Google's favicon service, so an internet connection is required. Metrics shown are portfolio-reported figures, not third-party audited results. The website HTML is stored as a gzip payload in `assets/site-payload.bin` and decompressed by the root `index.html` loader.
