@@ -1,0 +1,11 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#101c29">
+<title>Nandalal | Interactive Portfolio</title>
+<style>html,body{margin:0;min-height:100%;background:#101c29;color:#f5f1e8;font-family:system-ui,sans-serif}main{min-height:100vh;display:grid;place-items:center;text-align:center;padding:24px;box-sizing:border-box}.wrap{max-width:520px}.orb{width:54px;height:54px;border:2px solid #ffffff42;border-top-color:#e3b66e;border-radius:50%;animation:spin .9s linear infinite;margin:0 auto 22px}@keyframes spin{to{transform:rotate(360deg)}}h1{font:500 34px Georgia,serif;margin:0 0 10px}p{color:#cbd4d2;line-height:1.6;font-size:14px}small{color:#e3b66e}</style>
+</head>
+<body><main id="loading"><div class="wrap"><div class="orb"></div><h1>Preparing your journey</h1><p>Loading Nandalal’s interactive portfolio experience…</p><small>Three-dimensional scene · portfolio chapters · companion avatar</small></div></main>
+<script>
+(async()=>{try{const response=await fetch('./assets/site-payload.bin');if(!response.ok)throw new Error('Portfolio files could not be found.');if(!('DecompressionStream'in window))throw new Error('This browser does not support the required compression format.');const html=await new Response(response.body.pipeThrough(new DecompressionStream('gzip'))).text();document.open();document.write(html);document.close();}catch(error){const node=document.getElementById('loading');node.innerHTML='<div class="wrap"><h1>Portfolio could not load</h1><p>'+String(error.message||error)+'</p><p>Try refreshing the page or opening it in a recent version of Chrome, Edge, Firefox or Safari.</p></div>';}})();
+</script></body></html>
